@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sherubtse College Feedback System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            background-color: #1a237e;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+        .logo span {
+            color: white;
+            font-size: 1.2rem;
+        }
+        .auth-buttons {
+            margin-left: auto;
+            padding-right: 2rem;
+        }
+        .auth-buttons a {
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        .login-btn {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        .login-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #4CAF50;
+            color: #4CAF50;
+            transform: translateY(-2px);
+        }
+        .signup-btn {
+            background-color: white;
+            color: #1a237e;
+        }
+        .signup-btn:hover {
+            background-color: #4CAF50;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .hero {
+            background-image: url('/images/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .hero h1, .hero p {
+            position: relative;
+            z-index: 2;
+        }
+        .about {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 100px; /* Add space for footer */
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            width: 100%;
+            position: relative;
+            margin-top: auto;
+            text-align: center;
+        }
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/images/logo.png" alt="Sherubtse College Logo">
+            <span>Sherubtse College Feedback System</span>
+        </div>
+        <div class="auth-buttons">
+            <a href="/login" class="login-btn">Log in</a>
+            <a href="/signup" class="signup-btn">Sign Up</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to Sherubtse College Feedback System</h1>
+            <p>Provide your valuable feedback to help us improve the course experience.</p>
+        </section>
+
+        <section class="about">
+            <h2>About the Feedback System</h2>
+            <p>Our feedback system allows students to provide constructive feedback to enhance course quality and overall learning experience.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Sherubtse College. All rights reserved.</p>
+        <p>Contact: info@sherubtse.edu.bt | Phone: +975-123-4567</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

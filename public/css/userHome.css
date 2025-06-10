@@ -1,0 +1,94 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #003366;
+    }
+
+    .navbar-brand,
+    .nav-link,
+    .btn-logout {
+      color: #fff !important;
+    }
+
+    .btn-logout {
+      background-color: #ff4d4d;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 5px;
+    }
+
+    .btn-logout:hover {
+      background-color: #cc0000;
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1583951765986-bb8f63c14f33');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .section {
+      padding: 30px;
+    }
+
+    .highlight-box {
+      border: 2px solid #cc0000;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+
+    .emoji {
+      font-size: 1.2rem;
+    }
+
+    .feature-btn {
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .feature-btn.start {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .feature-btn.start:hover {
+      background-color: #0056b3;
+    }
+
+    .feature-btn.view {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .feature-btn.view:hover {
+      background-color: #1e7e34;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 15px;
+      }
+
+      .section {
+        padding: 20px;
+      }
+    }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <title>Manage Faculty</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/admin/home">Admin Panel</a>
+      <div>
+        <span class="navbar-text text-white me-3">Hello, Admin</span>
+        <a href="/logout" class="btn btn-outline-light btn-sm">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5 text-center">
+    <h2 class="mb-4">Manage Faculty</h2>
+    <a href="/admin/home" class="btn btn-secondary mt-3">Back to Dashboard</a>
+  </main>
+<a href="/admin/edit-faculty/<%= f.id %>" class="btn btn-sm btn-warning me-1">Edit</a>
+
+  <form action="/admin/manage-faculty" method="POST" class="row g-3 mb-4">
+  <div class="col-md-4">
+    <input type="text" name="fullName" placeholder="Full Name" class="form-control" required />
+  </div>
+  <div class="col-md-4">
+    <input type="email" name="email" placeholder="Email" class="form-control" required />
+  </div>
+  <div class="col-md-3">
+    <input type="text" name="department" placeholder="Department" class="form-control" />
+  </div>
+  <div class="col-md-1 d-grid">
+    <button type="submit" class="btn btn-success">Add</button>
+  </div>
+</form>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th><th>Full Name</th><th>Email</th><th>Department</th><th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% faculties.forEach((f, idx) => { %>
+      <tr>
+        <td><%= idx + 1 %></td>
+        <td><%= f.fullName %></td>
+        <td><%= f.email %></td>
+        <td><%= f.department || '-' %></td>
+        <td>
+          <form action="/admin/delete-faculty/<%= f.id %>" method="POST" onsubmit="return confirm('Delete this faculty?');">
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

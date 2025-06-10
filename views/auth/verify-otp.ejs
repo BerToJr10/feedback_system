@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP - Sherubtse College Feedback System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        .verify-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .otp-display {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="verify-container">
+            <h3 class="text-center mb-4">Verify Your Account</h3>
+            
+            <% if (error) { %>
+                <div class="alert <%= showOtp ? 'alert-info' : 'alert-danger' %> mb-3">
+                    <%= error %>
+                </div>
+            <% } %>
+
+            <form action="/verify-otp" method="POST" class="mb-3">
+                <div class="mb-3">
+                    <label for="otp" class="form-label">Enter OTP</label>
+                    <input type="text" 
+                           class="form-control" 
+                           id="otp" 
+                           name="otp" 
+                           placeholder="Enter OTP" 
+                           required 
+                           autocomplete="off">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Verify</button>
+            </form>
+
+            <div class="text-center">
+                <small class="text-muted">
+                    Please check your email for the OTP or use the one shown above if email service is unavailable.
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

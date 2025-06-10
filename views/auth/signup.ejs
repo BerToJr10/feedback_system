@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Sherubtse College Feedback System</title>
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<% if (typeof error !== 'undefined' && error) { %>
+  <div class="error-message"><%= error %></div>
+<% } %>
+
+<body>
+  <div class="auth-container">
+  <div class="auth-box">
+    <form class="auth-form" id="signupForm" method="POST" action="/signup" onsubmit="return validateForm()">
+  <div class="form-group">
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullName" required placeholder="Enter your full name">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email (must be Gmail)</label>
+    <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" placeholder="example@gmail.com">
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password (Min 8 chars, incl. uppercase, lowercase, digit)</label>
+    <input type="password" id="password" name="password" required placeholder="Enter password">
+  </div>
+
+  <div class="form-group">
+    <label for="confirm-password">Confirm Password</label>
+    <input type="password" id="confirm-password" required placeholder="Re-enter password">
+  </div>
+
+  <div class="form-group">
+    <label for="role">Register as</label>
+    <select id="role" name="role" required>
+      <option value="" disabled selected>Select role</option>
+      <option value="user">Student</option>
+      <option value="admin">Admin</option>
+    </select>
+  </div>
+
+  <button type="submit" class="submit-btn">Sign Up</button>
+</form>
+
+</div>
+</div>
+
+  <script>
+
+    function validateForm() {
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+
+  const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+  if (!strongPasswordRegex.test(password)) {
+    alert("Password must be at least 8 characters and include uppercase, lowercase, and a number.");
+    return false;
+  }
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match.");
+    return false;
+  }
+
+  return true; // All validations passed
+}
+
+  document.getElementById('signupForm').addEventListener('submit', function (e) {
+    const password = document.getElementById('password').value;
+    const confirm = document.getElementById('confirm-password').value;
+
+    if (password !== confirm) {
+      alert('Passwords do not match!');
+      e.preventDefault();
+      return;
+    }
+  });
+</script>
+
+</body>
+</html>

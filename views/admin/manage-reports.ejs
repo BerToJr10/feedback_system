@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/header') %>
+
+<div class="container my-4">
+  <h3>Feedback Reports</h3>
+
+  <% if (feedbacks.length === 0) { %>
+    <p>No feedback submitted yet.</p>
+  <% } else { %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Roll No</th>
+          <th>Course</th>
+          <th>Faculty</th>
+          <th>Rating</th>
+          <th>Comments</th>
+          <th>Submitted At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% feedbacks.forEach(fb => { %>
+          <tr>
+            <td><%= fb.Student?.fullName %></td>
+            <td><%= fb.Student?.rollNumber %></td>
+            <td><%= fb.Course?.courseName %></td>
+            <td><%= fb.Faculty?.fullName %></td>
+            <td><%= fb.rating %> / 5</td>
+            <td><%= fb.comments || '—' %></td>
+            <td><%= fb.createdAt.toLocaleString() %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+</div>
+
+<%- include('../partials/footer') %>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

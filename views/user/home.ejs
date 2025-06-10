@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sherubtse College Feedback System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #003366;
+    }
+
+    .navbar-brand,
+    .nav-link,
+    .btn-logout {
+      color: #fff !important;
+    }
+
+    .navbar-nav .nav-link {
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffcc00 !important; /* bright yellow or choose your preferred color */
+    }
+
+    .btn-logout {
+      color: white;
+      border-color: white;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-logout:hover {
+      background-color: #dc3545 !important; /* Bootstrap red */
+      color: white !important;
+      border-color: #dc3545 !important;
+    }
+
+
+    .hero {
+      background-image: url('/images/bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .section {
+      padding: 30px;
+    }
+
+    .highlight-box {
+      border: 2px solid #cc0000;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+
+    .emoji {
+      font-size: 1.2rem;
+    }
+
+    .feature-btn {
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .feature-btn.start {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .feature-btn.start:hover {
+      background-color: #0056b3;
+    }
+
+    .feature-btn.view {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .feature-btn.view:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 15px;
+      }
+
+      .section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">
+      <img src="/images/logo.png" alt="Sherubtse Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
+      Sherubtse College Feedback System
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav me-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="/user/feedback-form">Submit Feedback</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/view-feedback">View Feedback</a>
+        </li>
+      </ul>
+      <a href="/logout" class="btn btn-outline-light btn-logout ms-2">Log Out</a>
+    </div>
+  </div>
+</nav>
+
+  <div class="hero">
+    <h1>Welcome to Sherubtse College Feedback System</h1>
+    <p>Provide your valuable feedback to help us improve the course experience.</p>
+  </div>
+
+  <div class="container section">
+    <div class="highlight-box mb-4">
+      <h4>Welcome to the Sherubtse College Feedback System</h4>
+      <p>
+        At Sherubtse College, we value your voice. This platform is designed
+        to make it easy and secure for students to share feedback on courses,
+        teaching methods, campus facilities, and overall learning experiences.
+      </p>
+      <p>
+        Your input helps us enhance academic quality, support student wellbeing,
+        and build a better educational environment for everyone.
+      </p>
+      <ul>
+        <li><span class="emoji">🔒</span> Anonymous & Confidential</li>
+        <li><span class="emoji">✅</span> Used to Improve Teaching & Learning</li>
+        <li><span class="emoji">🔹</span> Your Voice Matters</li>
+      </ul>
+    </div>
+
+    <div class="row text-center mb-4">
+      <div class="col-md-6 mb-3">
+        <h6>Submit Feedback</h6>
+        <p>Share your feedback for the course you've taken this semester</p>
+        <a href="/user/feedback-form" class="feature-btn start">Start Now</a>
+      </div>
+      <div class="col-md-6 mb-3">
+        <h6>View Feedback</h6>
+        <p>Check what feedback you've submitted so far.</p>
+        <a href="/user/view-feedback" class="feature-btn view">View</a>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h5>Why Give Feedback?</h5>
+      <p>
+        Your feedback helps improve teaching, learning, and campus life at Sherubtse College.
+        It's quick, anonymous, and makes your voice heard.
+      </p>
+      <p><strong>Benefits:</strong></p>
+      <ul>
+        <li>Improves teaching quality</li>
+        <li>Enhances your learning experience</li>
+        <li>Helps the college make better decisions</li>
+        <li>Promotes open communication</li>
+        <li>Keeps your identity private</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Sherubtse College. All rights reserved.<br />
+    Contact: info@sherubtse.edu.bt | Phone: +975-123-4567
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
